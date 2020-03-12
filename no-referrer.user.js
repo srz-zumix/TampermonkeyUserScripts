@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        no referrer
-// @version     0.1
+// @version     1.0
 // @description Add to referrer meta ['no-referrer' and 'same-origin']
 // @author      srz_zumix
 // @namespace   https://github.com/srz-zumix/TampermonkeyUserScripts
@@ -31,7 +31,7 @@
                 meta.setAttribute("name", "referrer");
                 meta.setAttribute("content", value);
                 head.appendChild(meta);
-                console.log( value );
+                //console.log( value );
             });
         }
     }
