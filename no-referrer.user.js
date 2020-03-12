@@ -2,6 +2,7 @@
 // @name        no referrer
 // @version     1.0
 // @description Add to referrer meta ['no-referrer' and 'same-origin']
+// @license     MIT
 // @author      srz_zumix
 // @namespace   https://github.com/srz-zumix/TampermonkeyUserScripts
 // @run-at      document-idle
