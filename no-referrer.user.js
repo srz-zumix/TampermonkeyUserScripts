@@ -6,11 +6,14 @@
 // @author      srz_zumix
 // @namespace   https://github.com/srz-zumix/TampermonkeyUserScripts
 // @run-at      document-idle
+// @grant       none
 // @icon        https://github.githubassets.com/pinned-octocat.svg
 // @updateURL   https://github.com/srz-zumix/TampermonkeyUserScripts/raw/master/no-referrer.user.js
 // @downloadURL https://github.com/srz-zumix/TampermonkeyUserScripts/raw/master/no-referrer.user.js
 // ==/UserScript==
 (() => {
+    'use strict';
+
     function init(){
         // <meta name="referrer" content="no-referrer"> を挿入
         // https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Referrer-Policy
@@ -22,7 +25,7 @@
         //
         // 複数の値を指定すると、ブラウザーが対応しているもので最後に指定された値が適用されます
 
-        console.log("insert no-referrer")
+        // console.log("insert no-referrer")
         var noreferrer_contents = ['no-referrer', 'same-origin']
         var noreferrer = false
         var head = $('head');
