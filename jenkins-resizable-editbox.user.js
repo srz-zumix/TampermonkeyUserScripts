@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        Jenkins pipeline script editbox expansion/resizable
+// @name        Jenkins Resizable Editbox
 // @version     0.1
 // @description Jenkins pipeline script editbox expansion/resizable
 // @license     MIT
