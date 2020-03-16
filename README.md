@@ -17,7 +17,7 @@ Add to referrer meta
 
 ## Jenkins pipeline editor expansion/resizable
 
-1. [Install](https://github.com/srz-zumix/TampermonkeyUserScripts/raw/master/jenkins-resizable-editbox.user.js)
+1. [Install](https://github.com/srz-zumix/TampermonkeyUserScripts/raw/master/jenkins-resizable-pipeline-editbox.user.js)
 1. [Open Tampermonkey Option](chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/options.html)
 1. Select "Jenkins Resizable Pipeline Editbox"
 1. Open Settings
