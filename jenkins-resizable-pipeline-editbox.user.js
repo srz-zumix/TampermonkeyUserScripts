@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        Jenkins Resizable Editbox
+// @name        Jenkins Resizable Pipeline Editbox
 // @version     0.1
 // @description Jenkins pipeline script editbox expansion/resizable
 // @license     MIT
@@ -9,8 +9,8 @@
 // @grant       GM_setValue
 // @grant       GM_getValue
 // @icon        https://jenkins.io/images/logos/ice-cream/ice_cream.svg
-// @updateURL   https://github.com/srz-zumix/TampermonkeyUserScripts/raw/master/jenkins-resizable-editbox.user.js
-// @downloadURL https://github.com/srz-zumix/TampermonkeyUserScripts/raw/master/jenkins-resizable-editbox.user.js
+// @updateURL   https://github.com/srz-zumix/TampermonkeyUserScripts/raw/master/jenkins-resizable-pipeline-editbox.user.js
+// @downloadURL https://github.com/srz-zumix/TampermonkeyUserScripts/raw/master/jenkins-resizable-pipeline-editbox.user.js
 // ==/UserScript==
 
 // forked from [a2intl/resize_jenkins_editor.js](https://gist.github.com/a2intl/293a76ae3323ec21d7cdceb6f7cd63af)
