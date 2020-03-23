@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Jenkins Resizable Pipeline Editbox
-// @version     0.1
+// @version     0.2
 // @description Jenkins pipeline script editbox expansion/resizable
 // @license     MIT
 // @author      srz_zumix
@@ -57,10 +57,16 @@
     }
 
     function toWide() {
-        $('.container').style.width = '100%';
-        $('.container').style.padding = '0';
-        $('.col-md-offset-2').style.width = '100%';
-        $('.col-md-offset-2').style.margin = '0';
+        var container = $('.container');
+        if( container ) {
+            container.style.width = '100%';
+            container.style.padding = '0';
+        }
+        var colmod = $('.col-md-offset-2');
+        if( colmod ) {
+            colmod.style.width = '100%';
+            colmod.style.margin = '0';
+        }
     }
     function $(selector, el) {
         return (el || document).querySelector(selector);
