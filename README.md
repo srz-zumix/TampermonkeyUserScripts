@@ -2,7 +2,7 @@
 
 ## gh-ci-commit-command
 
-1. [Install](https://github.com/srz-zumix/TampermonkeyUserScripts/raw/master/gh-ci-commit-command.user.js)
+1. [Install](https://github.com/srz-zumix/TampermonkeyUserScripts/raw/master/gh-ci-comment-command.user.js)
 
 ## no-referrer
 
