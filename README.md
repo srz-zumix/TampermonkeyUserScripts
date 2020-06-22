@@ -1,5 +1,9 @@
 # TampermonkeyUserScritps
 
+## gh-ci-commit-command
+
+1. [Install](https://github.com/srz-zumix/TampermonkeyUserScripts/raw/master/gh-ci-commit-command.user.js)
+
 ## no-referrer
 
 Add to referrer meta
