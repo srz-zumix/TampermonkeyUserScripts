@@ -25,13 +25,14 @@ function split_current_page() {
         var s=document.createElement('div');
         var root_class_name = '_' + Math.random().toString(36).substr(2, 9);
         s.setAttribute("class",  root_class_name);
-        s.innerHTML='<div class="move_target split_resizable" style="position:absolute;top:100px;left:0px;z-index:10000;border:2px solid #ddd;width:90%;height:300px;padding:4px;padding-left:8px;background-color:#fff;"><div><button type="button" name="split_move" class="split_move">≡≡≡</button><button type="button" name="split_close" class="split_close" style="position:absolute;top:2px;right:4px;padding-left:4px;padding-right:4px;float:right;border: 1px solid #000; background-color:#999;color:#eee;" >x</button></div><iframe src="#" width="100%" height="90%"  frameborder="0" ></iframe></div>';
+        s.innerHTML='<div class="move_target split_resizable" style="position:absolute;top:100px;left:0px;z-index:10000;border:2px solid #F0897F;width:90%;height:300px;padding:4px;padding-left:8px;background-color:#fff;"><div><button type="button" name="split_move" class="split_move split_button">≡≡≡</button><button type="button" name="split_close" class="split_close split_button" style="position:absolute;top:2px;right:4px;padding-left:4px;padding-right:4px;float:right;" >x</button></div><iframe src="#" width="100%" height="90%"  frameborder="0" ></iframe></div>';
         document.body.appendChild(s);
 
         var newCSS ;
         newCSS = GM_getResourceText ("jquery-ui.css");
-        GM_addStyle (newCSS);
-        GM_addStyle (".ui-resizable-se { border-right: 4px solid #F0897F; border-bottom: 4px solid #F0897F;}");
+        GM_addStyle(newCSS);
+        GM_addStyle(".ui-resizable-se { border-right: 2px solid #F0897F; border-bottom: 2px solid #F0897F;}");
+        GM_addStyle(".split_button { border: 1px solid #222; background-color:#aaa; color:#eee; }")
 
         var r = $(".split_resizable", s);
         var move_target = $(".move_target", s);

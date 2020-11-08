@@ -6,6 +6,14 @@
 
 1. [Install](https://github.com/srz-zumix/TampermonkeyUserScripts/raw/master/gh-ci-comment-command.user.js)
 
+## iframe-splitter
+
+1. [Install](https://github.com/srz-zumix/TampermonkeyUserScripts/raw/master/iframe-splitter.user.js)
+1. Click Tampermonkey Menu `Split current page`  
+![iframe-splitter](docs/images/iframe-splitter-menu.png)
+1. Split current page  
+![iframe-splitter](docs/images/iframe-splitter.png)
+
 ## no-referrer
 
 Add to referrer meta
