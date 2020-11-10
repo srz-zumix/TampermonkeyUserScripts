@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         iframe splitter
 // @namespace    https://github.com/srz-zumix/TampermonkeyUserScripts
-// @version      0.1
+// @version      0.2
 // @description  split current page
 // @author       srz_zumix
 // @run-at       document-idle
@@ -32,6 +32,7 @@ function split_current_page() {
         newCSS = GM_getResourceText ("jquery-ui.css");
         GM_addStyle(newCSS);
         GM_addStyle(".ui-resizable-se { border-right: 2px solid #F0897F; border-bottom: 2px solid #F0897F;}");
+        GM_addStyle(".ui-resizable-nw { border-left: 2px solid #F0897F; border-top: 2px solid #F0897F;}");
         GM_addStyle(".split_button { border: 1px solid #222; background-color:#aaa; color:#eee; }")
 
         var r = $(".split_resizable", s);
@@ -48,7 +49,7 @@ function split_current_page() {
         move_target.css("top", t);
 
         r.resizable({
-            handles: 'n, e, s, w, se',
+            handles: 'n, e, s, w, se, nw',
             start: function(event, ui) {
                 ui.element.append($("<div/>", {
                     id: "iframe-barrier",
