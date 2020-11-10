@@ -31,7 +31,7 @@ function split_current_page() {
         var newCSS ;
         newCSS = GM_getResourceText ("jquery-ui.css");
         GM_addStyle(newCSS);
-        GM_addStyle(".ui-resizable-se { border-right: 2px solid #F0897F; border-bottom: 2px solid #F0897F;}");
+        GM_addStyle(".ui-resizable-se { width: 7px; height: 7px; border-right: 2px solid #F0897F; border-bottom: 2px solid #F0897F;}");
         GM_addStyle(".ui-resizable-nw { border-left: 2px solid #F0897F; border-top: 2px solid #F0897F;}");
         GM_addStyle(".split_button { border: 1px solid #222; background-color:#aaa; color:#eee; }")
 
@@ -67,7 +67,7 @@ function split_current_page() {
                 $("#iframe-barrier", ui.element).remove();
             },
             resize: function(event, ui) {
-                $("iframe", ui.element).width(ui.size.width-20).height(ui.size.height-20);
+                $("iframe", ui.element).width(ui.size.width-20).height(ui.size.height-30);
                 GM_setValue("split-width" , ui.size.width);
                 GM_setValue("split-height", ui.size.height);
                 var l = move_target.css("left");
