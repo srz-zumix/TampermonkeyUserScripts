@@ -30,7 +30,7 @@ function split_current_page() {
         var s=document.createElement('div');
         var root_class_name = '_' + Math.random().toString(36).substr(2, 9);
         s.setAttribute("class",  `iframe_splitter ${root_class_name}`);
-        s.innerHTML='<div class="move_target split_resizable" style="position:absolute;top:100px;left:0px;width:90%;height:300px;"><div><button type="button" name="split_move" class="split_move split_button" style="float:left;left:0px;">≡≡≡≡</button><button type="button" name="split_close" class="split_close split_button" style="right:0px;float:right;" >X</button></div><iframe src="#" width="100%" height="90%"  frameborder="0" ></iframe></div>';
+        s.innerHTML='<div class="move_target split_resizable" style="position:absolute;top:100px;left:0px;width:90%;height:300px;"><div><button type="button" name="split_move" class="split_move split_button" style="float:left;left:0px;">≡≡</button><button type="button" name="split_close" class="split_close split_button" style="right:0px;float:right;" >X</button></div><iframe src="#" width="100%" height="90%"  frameborder="0" ></iframe></div>';
         document.body.appendChild(s);
 
         var newCSS ;
