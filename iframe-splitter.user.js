@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         iframe splitter
 // @namespace    https://github.com/srz-zumix/TampermonkeyUserScripts
-// @version      0.2
+// @version      0.3
 // @description  split current page
 // @author       srz_zumix
 // @run-at       document-idle
@@ -22,26 +22,38 @@ function split_current_page() {
     'use strict';
 
     if(window == window.parent) {
+        var index = $('.iframe_splitter').length;
+        var data_index = index;
+        if( data_index >= 3 ) {
+            data_index = 3;
+        }
         var s=document.createElement('div');
         var root_class_name = '_' + Math.random().toString(36).substr(2, 9);
-        s.setAttribute("class",  root_class_name);
-        s.innerHTML='<div class="move_target split_resizable" style="position:absolute;top:100px;left:0px;z-index:10000;border:2px solid #F0897F;width:90%;height:300px;padding:4px;padding-left:8px;background-color:#fff;"><div><button type="button" name="split_move" class="split_move split_button">≡≡≡</button><button type="button" name="split_close" class="split_close split_button" style="position:absolute;top:2px;right:4px;padding-left:4px;padding-right:4px;float:right;" >x</button></div><iframe src="#" width="100%" height="90%"  frameborder="0" ></iframe></div>';
+        s.setAttribute("class",  `iframe_splitter ${root_class_name}`);
+        s.innerHTML='<div class="move_target split_resizable" style="position:absolute;top:100px;left:0px;width:90%;height:300px;"><div><button type="button" name="split_move" class="split_move split_button" style="float:left;left:0px;">≡≡≡≡</button><button type="button" name="split_close" class="split_close split_button" style="right:0px;float:right;" >X</button></div><iframe src="#" width="100%" height="90%"  frameborder="0" ></iframe></div>';
         document.body.appendChild(s);
 
         var newCSS ;
         newCSS = GM_getResourceText ("jquery-ui.css");
         GM_addStyle(newCSS);
         GM_addStyle(".ui-resizable-se { width: 7px; height: 7px; border-right: 2px solid #F0897F; border-bottom: 2px solid #F0897F;}");
-        GM_addStyle(".ui-resizable-nw { border-left: 2px solid #F0897F; border-top: 2px solid #F0897F;}");
-        GM_addStyle(".split_button { border: 1px solid #222; background-color:#aaa; color:#eee; }")
+        GM_addStyle(".ui-resizable-nw { border-left: 2px solid #F0897F; border-top: 2px solid #F0897F; }");
+        GM_addStyle(".split_resizable { padding: 0px 4px 4px 8px; border:2px solid #F0897F; background-color:#fff; z-index:10000; }");
+        GM_addStyle(".split_button { border: none; background-color:#F0897F; color:#eee; font-size: 6px; height: 12px; position:absolute; padding: 0px 4px; } .split_button:focus { outline: none; }");
+        GM_addStyle(".split_close { border-left: 2px solid #F0897F; border-bottom: 2px solid #F0897F; }");
+        GM_addStyle(".split_move { border-right: 2px solid #F0897F; border-bottom: 2px solid #F0897F; cursor: move; }");
 
         var r = $(".split_resizable", s);
+        var wparam = `split-width-${data_index}`;
+        var hparam = `split-width-${data_index}`;
+        var lparam = `split-left-${data_index}`;
+        var tparam = `split-top-${data_index}`;
         var move_target = $(".move_target", s);
         var move_marker = $(".split_move", s);
-        var w = GM_getValue("split-width" , r.width());
-        var h = GM_getValue("split-height", r.height());
-        var l = GM_getValue("split-left" , 10);
-        var t = GM_getValue("split-top", 100);
+        var w = GM_getValue(wparam , r.width());
+        var h = GM_getValue(hparam, r.height());
+        var l = GM_getValue(lparam, 10);
+        var t = GM_getValue(tparam, 100);
 
         r.width(w).height(h);
         $("iframe", r).width(w-20).height(h-20);
@@ -68,12 +80,12 @@ function split_current_page() {
             },
             resize: function(event, ui) {
                 $("iframe", ui.element).width(ui.size.width-20).height(ui.size.height-30);
-                GM_setValue("split-width" , ui.size.width);
-                GM_setValue("split-height", ui.size.height);
+                GM_setValue(wparam, ui.size.width);
+                GM_setValue(hparam, ui.size.height);
                 var l = move_target.css("left");
                 var t = move_target.css("top");
-                GM_setValue("split-left", l);
-                GM_setValue("split-top", t);
+                GM_setValue(lparam, l);
+                GM_setValue(tparam, t);
             }
         });
 
@@ -99,8 +111,8 @@ function split_current_page() {
                 var t = evt2.clientY - posY1;
                 move_target.css("left", l);
                 move_target.css("top", t);
-                GM_setValue("split-left" , l);
-                GM_setValue("split-top", t);
+                GM_setValue(lparam, l);
+                GM_setValue(tparam, t);
             }
         });
 
